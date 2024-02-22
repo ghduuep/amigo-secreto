@@ -24,6 +24,11 @@ function embaralhar(lista) {
 }
 
 function sortear() {
+    if (amigos.length < 4) {
+        alert('Insira pelo menos 4 participantes');
+        return;
+    }
+
     embaralhar(amigos);
     let sorteio = document.getElementById('lista-sorteio')
 
