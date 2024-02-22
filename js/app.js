@@ -1,24 +1,24 @@
 let amigos = [];
 
 function adicionar() {
-    let amigo = document.getElementById('nome-amigo');
-    if (amigo.value == '') {
+    let amigo = (document.getElementById('nome-amigo').value).toUpperCase();
+    if (amigo == '') {
         alert('Informe o nome para continuar!');
         return;
     }
 
-    if (amigos.includes(amigo.value)) {
-        alert(`${amigo.value} já esta incluído na lista!`);
+    if (amigos.includes(amigo)) {
+        alert(`${amigo} já esta incluído na lista!`);
         return;
     }
     let lista = document.getElementById('lista-amigos');
-    amigos.push(amigo.value);
+    amigos.push(amigo);
     if (lista.textContent == '') {
-        lista.textContent = amigo.value
+        lista.textContent = amigo
     } else {
-        lista.textContent = lista.textContent + ', ' + amigo.value;
+        lista.textContent = lista.textContent + ', ' + amigo;
     }
-    amigo.value = '';
+    amigo = '';
 }
 
 function embaralhar(lista) {
